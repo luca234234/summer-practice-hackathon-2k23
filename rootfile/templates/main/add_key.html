@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block css %}
+{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" onclick="history.back()" style="margin-top: -20px;margin-bottom: -20px;">
+            <i class="bi bi-arrow-left-short" style="font-size: 3rem;"></i>
+        </a>
+      </div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <div class="container-md">
+    <div style="top:10vh;margin-top: 8vh;">
+    <form id="loginForm">
+      <div class="mb-3" style="max-width: 25rem;">
+        <label for="exampleInputEmail1" class="form-label">Tag Name</label>
+        <input type="text" class="form-control" id="InputTag" aria-describedby="emailHelp">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    <script src="{{url_for('static', filename='js/settag.js')  | cache_bust }}"></script>
+{% endblock %}
